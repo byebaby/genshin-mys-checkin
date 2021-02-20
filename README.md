@@ -27,6 +27,16 @@
 
 米游社网页版 cookie，如需多帐号签到，以 `#` 隔开
 
+## 米游社 米游币 安卓调试版本  mihoyobbs_2.3.0_gf
+
+- 支持多帐号
+
+### Secrets
+
+#### `APPCOOKIE`  
+
+米游社2.3.0 安卓客户端 cookie，如需多帐号签到，以 `#` 隔开
+
 ### 参考
 
 - [y1ndan/genshin-impact-helper](https://github.com/y1ndan/genshin-impact-helper)
