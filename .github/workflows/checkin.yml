@@ -34,5 +34,6 @@ jobs:
       - name: Checkin
         env:
           COOKIE: ${{ secrets.COOKIE }}
+          APPCOOKIE: ${{ secrets.APPCOOKIE }}
           WB_CONFIG: ${{ secrets.WB_CONFIG }}
         run: yarn start
