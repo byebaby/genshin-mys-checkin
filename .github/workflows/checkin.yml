@@ -17,16 +17,6 @@ jobs:
         with:
           token: ${{ secrets.ACCESS_TOKEN || github.token }}
 
-      - name: Sync with upstream
-        if: github.repository != 'Tsuk1ko/genshin-mys-checkin'
-        continue-on-error: true
-        uses: aormsby/Fork-Sync-With-Upstream-action@v2.2
-        with:
-          upstream_repository: Tsuk1ko/genshin-mys-checkin
-          upstream_branch: main
-          target_branch: main
-          git_pull_args: '-s recursive -Xtheirs'
-
       - name: Cache
         if: env.RUN_CACHE == 'true'
         uses: actions/cache@v2
