@@ -72,6 +72,10 @@ module.exports = class MysAppClient {
                 await delay(1000);
                 this.continuous_sign(post_id)
             }
+            for (let post_id of post_id_list.slice(0, 3)) {
+                await delay(1000);
+                this.view_post_0(post_id)
+            }
             for (let post_id of post_id_list.slice(0, 5)) {
                 await delay(1000);
                 this.post_up_0(post_id)
@@ -80,10 +84,7 @@ module.exports = class MysAppClient {
                 await delay(1000);
                 this.share_post_0(post_id)
             }
-            for (let post_id of post_id_list.slice(0, 3)) {
-                await delay(1000);
-                this.view_post_0(post_id)
-            }
+
             _log("米游币获取完成,请查收");
         }).catch(e => {
             global.failed = true;
