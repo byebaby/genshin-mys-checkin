@@ -49,12 +49,13 @@ const getWbConfig = () => {
      * mys myb
      */
     const mysAppCookies = (process.env.APPCOOKIE || '').split('#').filter(cookie => cookie);
+    const missionAppCookies = (process.env.MISSIONCOOKIE || '').split('#').filter(cookie => cookie);
     if (mysAppCookies.length) {
         _log('\nMYS MYB');
-        for (const cookie of mysAppCookies) {
-            const mysAppClient = new MysAppClient(cookie);
-                await sleep();
-                await mysAppClient.appMybCheckin();
+        for (let i = 0; i < mysAppCookies.length; i++) {
+            const mysAppClient = new MysAppClient(mysAppCookies[i], missionAppCookies[i]);
+            await sleep();
+            await mysAppClient.appMybCheckin();
         }
     }
 
