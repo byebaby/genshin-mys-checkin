@@ -36,4 +36,5 @@ jobs:
           COOKIE: ${{ secrets.COOKIE }}
           APPCOOKIE: ${{ secrets.APPCOOKIE }}
           WB_CONFIG: ${{ secrets.WB_CONFIG }}
+          MISSIONCOOKIE: ${{ secrets.MISSIONCOOKIE }}
         run: yarn start
