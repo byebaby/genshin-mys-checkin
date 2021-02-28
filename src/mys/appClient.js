@@ -114,17 +114,22 @@ module.exports = class MysAppClient {
                     await delay(1000);
                     await this.get_user_missions_state();
                     if (this.now_missions === 110) {
-                        _log('今日已获得110米游币');
+                        _log('接口确认：今日已获得110米游币');
                     } else {
-                        global.failed = true;
-                        _err('米游币不满足110,请手动检查');
+                        if (this.mission_headers.cookie != null){
+                            global.failed = true;
+                            _err('米游币不满足110,请手动检查');
+                        }else {
+                            _log('米游币获取完成,请手动查收');
+                        }
+
                     }
                 }).catch(e => {
                     global.failed = true;
                     _err('米游币获取请求失败', e.toString());
                 });
             } else {
-                _warn(`已获得${this.now_missions}米游币,无需继续执行`);
+                _warn(`接口确认：已获得${this.now_missions}米游币,无需继续执行`);
             }
         })()
 
