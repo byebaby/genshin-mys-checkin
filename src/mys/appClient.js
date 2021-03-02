@@ -88,7 +88,7 @@ module.exports = class MysAppClient {
             await this.get_user_missions_state();
             if (this.now_missions !== 110) {
                 _log(`已获得${this.now_missions}米游币,继续执行`);
-                await get(`https://bbs-api.mihoyo.com/post/api/feeds/posts?fresh_action=1&gids=2&last_id=`, {
+                await get(`https://api-takumi.mihoyo.com/post/api/getForumPostList?forum_id=26&is_good=false&is_hot=false&last_id=&page_size=20&sort_type=1`, {
                     headers: this.app_headers,
                 }).then(async ({data}) => {
                     const list = _.get(data, 'data.list');
