@@ -119,6 +119,7 @@ module.exports = class MysAppClient {
                         if (this.mission_headers.cookie != null){
                             global.failed = true;
                             _err('米游币不满足110,请手动检查');
+                            _log(post_id_list);
                         }else {
                             _log('米游币获取完成,请手动查收');
                         }
