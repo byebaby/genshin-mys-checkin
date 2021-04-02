@@ -111,16 +111,16 @@ module.exports = class MysAppClient {
                         await delay(1000);
                         this.share_post_0(post_id)
                     }
-                    await delay(1000);
+                    await delay(5000);
                     await this.get_user_missions_state();
                     if (this.now_missions === 110) {
                         _log('接口确认：今日已获得110米游币');
                     } else {
-                        if (this.mission_headers.cookie != null){
+                        if (this.mission_headers.cookie != null) {
                             global.failed = true;
-                            _err('米游币不满足110,请手动检查');
+                            _err(`接口确认：已获得${this.now_missions}米游币,请手动检查`);
                             _log(post_id_list);
-                        }else {
+                        } else {
                             _log('米游币获取完成,请手动查收');
                         }
 
